@@ -18,8 +18,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
 import { fontWeight } from '@mui/system'
 
-//! 51:00
-//! https://youtu.be/wYpCWwD1oz0 
+
 
 const Item = ({title, to, icon, selected, setSelected}) =>{
   const theme = useTheme()
@@ -94,7 +93,7 @@ const Sidebar = () => {
                   <img src={`../../assets/user.png`} alt="profile-user" width="100px" height="100px" style={{cursor:"pointer", borderRadius:"50%"}}/>
                 </Box>
                 <Box textAlign="center" >
-                  <Typography variant="h2" color={colors.grey[100]} fontWeight="bold" sx={{marginTop: "10px"}}>Mark Zuckerburg</Typography>
+                  <Typography variant="h2" color={colors.grey[100]} fontWeight="bold" sx={{marginTop: "10px"}}>Bill Gates</Typography>
                   <Typography variant="h5" color={colors.greenAccent[500]}>VP Admin</Typography>
                 </Box>
               </Box>
