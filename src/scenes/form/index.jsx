@@ -22,7 +22,7 @@ const userSchema = yup.object().shape({
     email: yup.string().email("Invalid Email").required("required"),
     contact: yup.string().matches(phoneRegEx, "Phone number is not valid").required("required"),
     address1: yup.string().required("required"),
-    address2: yup.string().required("required"),
+    address2: yup.string(),
 })
 
 const Form = () => {
