@@ -10,19 +10,18 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd"
 import TrafficIcon from "@mui/icons-material/Traffic"
 
 import LineChart from "../../components/LineChart"
-import PieChart from "../../components/PieChart"
 import BarChart from "../../components/BarChart"
 import GeoChart from "../../components/GeoChart"
 import StatBox from "../../components/StatBox"
 import ProgressCircle from "../../components/ProgressCircle"
-import { PointOfSale } from "@mui/icons-material"
-
+import useDocumentTitle from '../../hooks/useDocumentTitle'
 
 
 
 const Dashboard = () => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  useDocumentTitle('Admin Dashboard')
 
   return (
     <Box m="20px">

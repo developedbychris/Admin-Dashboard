@@ -16,8 +16,8 @@ import PieChartOutlinedIcon from '@mui/icons-material/PieChartOutlined'
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined'
-import { fontWeight } from '@mui/system'
-
+import logo from '../../assets/adminify-logo.png'
+import Image from 'mui-image'
 
 
 const Item = ({title, to, icon, selected, setSelected}) =>{
@@ -72,11 +72,14 @@ const Sidebar = () => {
               !isCollapsed && (
                 <Box
                   display='flex' justifyContent='space-between'
-                  alignItems='center' ml="15px"  
+                  alignItems='center'   ml="15px"
                 >
-                  <Typography variant='h3' color={colors.grey[100]}>
-                    ADMIN                    
-                  </Typography>
+                  <Box display="flex" justifyContent="space-around" alignItems='center' width="140px">
+                    <Image src={logo} height={25} width={25} fit='contain' duration={3000} shift="right" style={{marginRight:"12px"}}/>
+                    <Typography variant='h3' color={colors.grey[100]}>
+                      ADMINIFY                    
+                    </Typography>
+                  </Box>
                   <IconButton onClick={()=> setIsCollapsed(!isCollapsed)}>
                     <MenuOutlinedIcon/>
                   </IconButton>
@@ -116,6 +119,9 @@ const Sidebar = () => {
             <Item title="Geography" to="/geography" icon={<MapOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
           </Box>
         </Menu>
+        <Typography padding="15px" textAlign="center">
+        Copyright © 2023 Adminify.<br/> All rights reserved.
+        </Typography>
       </ProSidebar>
 
     </Box>

@@ -4,9 +4,10 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid"
 import { tokens } from "../../theme"
 import { mockDataInvoices } from "../../data/mockData"
 import Header from "../../components/Header"
-
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 
 const Invoices = () => {
+  useDocumentTitle('List of Invoices')
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const columns = 

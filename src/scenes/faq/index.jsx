@@ -4,8 +4,10 @@ import { Accordion, AccordionSummary, AccordionDetails } from "@mui/material"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import { tokens } from "../../theme"
 import Header from "../../components/Header"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 
 const FAQ = () => {
+  useDocumentTitle('FAQ')
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 

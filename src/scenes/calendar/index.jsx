@@ -8,8 +8,10 @@ import listPlugin from "@fullcalendar/list"
 import { Box, List, ListItem, ListItemText, Typography, useTheme } from "@mui/material"
 import { tokens } from "../../theme"
 import Header from "../../components/Header"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 
 const Calendar = () => {
+    useDocumentTitle('Calendar')
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const [currentEvents, setCurrentEvents] = useState([])

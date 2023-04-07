@@ -4,9 +4,11 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid"
 import { tokens } from "../../theme"
 import { mockDataContacts } from "../../data/mockData"
 import Header from "../../components/Header"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 
 
 const Contacts = () => {
+  useDocumentTitle('Contacts List')
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const columns = 

@@ -7,8 +7,10 @@ import  AdminPanelSettingsOutlinedIcon  from "@mui/icons-material/AdminPanelSett
 import LockOpenOutlinedIcon  from "@mui/icons-material/LockOpenOutlined"
 import SecurityOutlinedIcon  from "@mui/icons-material/SecurityOutlined"
 import Header from "../../components/Header"
+import useDocumentTitle from "../../hooks/useDocumentTitle"
 
 const Team = () => {
+  useDocumentTitle('Team Management')
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const columns = 
