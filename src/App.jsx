@@ -15,9 +15,6 @@ import Pie from './scenes/pie'
 import Line from './scenes/line'
 import Geography from './scenes/geography'
 
-
-//! 3:03:00
-//! https://youtu.be/wYpCWwD1oz0 
 function App() {
   const [theme, colorMode] = useMode()
   
