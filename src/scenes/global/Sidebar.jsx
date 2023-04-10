@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import 'react-pro-sidebar/dist/css/styles.css'
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { tokens } from '../../theme'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
@@ -20,14 +20,15 @@ import logo from '../../assets/adminify-logo.png'
 import Image from 'mui-image'
 
 
-const Item = ({title, to, icon, selected, setSelected}) =>{
+const Item = ({title, to, icon}) =>{
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
+  const location = useLocation();
+
   return(
     <MenuItem 
-      active={selected === title} 
+      active={location.pathname === to} 
       style={{color: colors.grey[100]}}
-      onClick={()=> setSelected(title)}
       icon={icon}
     >
       <Typography>{title}</Typography>
@@ -40,7 +41,6 @@ const Sidebar = () => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const [isCollapsed, setIsCollapsed] = useState(false)
-  const [selected, setSelected] = useState("Dashboard")
   
   return (
     <Box sx={{
@@ -103,20 +103,20 @@ const Sidebar = () => {
             )}
           {/* MENU ITEMS */}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-            <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
+            <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon/>}/>
             <Typography variant='h6' color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>Data</Typography>
-            <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="Contacts Information" to="/contacts" icon={<ContactsOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="Invoices Balances" to="/invoices" icon={<ReceiptOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
+            <Item title="Manage Team" to="/team" icon={<PeopleOutlinedIcon/>}/>
+            <Item title="Contacts Information" to="/contacts" icon={<ContactsOutlinedIcon/>}/>
+            <Item title="Invoices Balances" to="/invoices" icon={<ReceiptOutlinedIcon/>}/>
             <Typography variant='h6' color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>Pages</Typography>
-            <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="Calendar" to="/calendar" icon={<CalendarTodayOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="FAQ Page" to="/faq" icon={<HelpOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
+            <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon/>}/>
+            <Item title="Calendar" to="/calendar" icon={<CalendarTodayOutlinedIcon/>}/>
+            <Item title="FAQ Page" to="/faq" icon={<HelpOutlinedIcon/>}/>
             <Typography variant='h6' color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>Charts</Typography>
-            <Item title="Bar Chart" to="/bar" icon={<BarChartOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="Pie Chart" to="/pie" icon={<PieChartOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="Line Chart" to="/line" icon={<TimelineOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
-            <Item title="Geography" to="/geography" icon={<MapOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
+            <Item title="Bar Chart" to="/bar" icon={<BarChartOutlinedIcon/>}/>
+            <Item title="Pie Chart" to="/pie" icon={<PieChartOutlinedIcon/>}/>
+            <Item title="Line Chart" to="/line" icon={<TimelineOutlinedIcon/>}/>
+            <Item title="Geography" to="/geography" icon={<MapOutlinedIcon/>}/>
           </Box>
         </Menu>
         <Typography padding="15px" textAlign="center">
